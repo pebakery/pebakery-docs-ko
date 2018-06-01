@@ -1,8 +1,8 @@
-# 지원이 중단되었거나 중단될 명령어
+# 제거된 명령어
 
-다음 명령어들은 더 이상 지원되지 않습니다.
+## PEBakery에서 제거된 명령어
 
-## 지원이 중단된 명령어
+다음 명령어들은 WinBuilder 082에 존재하지만, PEBakery에서 구현되지 않았습니다.
 
 ### FileByteExtract
 
@@ -10,23 +10,23 @@
 
 ### RegReadBin / RegWriteBin
 
-PEBakery는 RegRead와 RegWrite에서 QWORD와 유니코드 문자열을 지원하기 때문에 더 이상 필요하지 않습니다.
+PEBakery는 유니코드 문자열을 정상적으로 처리할 수 있습니다.
 
 ### ExtractAllFilesIfNotExist
 
-더 이상 사용되지 않습니다.
+더 이상 사용되지 않으며, 다른 방법으로 같은 효과를 낼 수 있습니다.
 
 ### StrFormat,CharToOEM / OEMToChar
 
-DOS 문자셋은 더 이상 사용되지 않습니다.
+더 이상 사용되지 않습니다.
 
 ### System,Comp80
 
-PEBakery는 WinBuilder 082와 호환되는 구현체이며, WinBuilder 080을 지원하지 않습니다.
+PEBakery의 명령어 내부 구현은 WinBuilder 082 내부 구조와 무관하며, WinBuilder 080의 구현은 지원하지 않습니다.
 
 ### System,FileRedirect / RegRedirect
 
-PEBakery는 AnyCPU나 x64로 컴파일될 수 있으며, 실행에 WOW64가 필요하지 않습니다.
+PEBakery는 AnyCPU나 x64로 컴파일될 수 있으며, 실행을 위해 WOW64를 필요로 하지 않습니다.
 
 ### System,IsTerminal
 
@@ -38,42 +38,40 @@ PEBakery는 AnyCPU나 x64로 컴파일될 수 있으며, 실행에 WOW64가 필�
 
 ### System,SplitParameters
 
-더 이상 사용되지 않으며, PEBakery는 언제나 인자를 분해합니다.
+더 이상 사용되지 않으며, PEBakery는 언제나 인자들을 `,`를 기점으로 분리합니다.
 
 ### If,License
 
 더 이상 사용되지 않습니다.
 
-## 지원이 중단될 명령어
+## 제거될 예정인 명령어들
 
-다음 명령어들은 차기 버전에서 지원이 중단될 예정이며, 사용이 권장되지 않습니다.
-
-### ExtractAndRun
-
-WinBuilder의 한계로 인해 이 명령어는 Extract와 ShellExecuteDelete를 사용한 매크로로 구현하는 것이 권장됩니다.
+PEBakery에서 이 명령어들을 사용할 수는 있지만, 추후 삭제될 예정입니다. 다른 명령어를 사용하는 것을 강력히 추천합니다.
 
 ### WebGetIfNotExist
 
-WinBuilder 082는 버그로 인해 이 명령어들을 제대로 실행하지 못하며, 매크로로 구현하는 것이 권장됩니다.
+WinBuilder 082에서 제대로 작동하지 않는 명령어입니다.
 
 ### StrFormat,ShortPath / LongPath
 
-레지스트리 `HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisable8dot3NameCreation` 값에 따라 명령어가 제대로 작동할수도, 작동하지 않을수도 있습니다.
+이 명령어는 레지스트리 `HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisable8dot3NameCreation`의 값에 따라 성공할 수도, 실패할 수도 있습니다.
 
-이러한 이유로 인해 이 명령어는 모든 환경에서 제대로 작동하리라 보장될 수 없습니다.
+어떤 환경에서도 제대로 작동한다는 보장이 없기에 삭제될 예정입니다.
 
 ### System,HasUAC
 
-PEBakery는 이 명령어에 대해 언제나 `True`를 반환합니다.
+PEBakery는 이 명령어에 언제나 `True`를 반환합니다.
 
-Microsoft는 지원하는 모든 Windows 버전에서 User Account Control (UAC)를 기본으로 켜 두었습니다. 대다수의 사용자들은 UAC의 존재 및 UAC를 끄는 것의 위험성을 인지하지 못하고 있습니다. 따라서 프로젝트를 작성할 때 UAC의 상태에 관계없이 프로젝트가 제대로 작동하도록 설계하는 것이 권장됩니다.
+현재 Microsoft에 의해 지원되는 모든 Windows 버전에서는 User Account Control (UAC)가 기본적으로 켜져 있습니다. 즉 대부분의 환경에서 UAC가 켜져 있다고 가정하는 것이 좋습니다.  많은 사용자들은 UAC를 끄는 것의 보안 위협을 알지 못합니다. 따라서 프로젝트 빌드를 위해 UAC를 끄도록 유도하는 대신 UAC 활성 여부에 상관없이 프로젝트가 성공적으로 빌드되도록 설계하십시오.
 
 ### System,RebuildVars
 
-이름과 다르게 변수들을 초기화합니다.
+이름과 달리, 이름과 달리 WinBuilder 082에서 이 명령어는 모든 변수를 삭제합니다.
+
+현재 PEBakery에서는 이 명령어가 실행되면 변수를 스크립트 기본값으로 초기화합니다.
 
 ### GetParam / PackParam
 
-WinBuilder 082는 버그로 인해 이 명령어들을 제대로 실행하지 못합니다.
+WinBuilder 082에서 제대로 작동하지 않는 명령어이며, 더 이상 사용되지 않습니다.
 
-PEBakery는 무한대의 섹션 인자를 지원하기 때문에 이 명령어들은 더 이상 필요하지 않습니다.
+PEBakery는 Section 인자 수에 제한이 없기 때문에 이 명령어를 사용할 이유가 없습니다.
