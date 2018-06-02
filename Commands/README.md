@@ -1,25 +1,23 @@
-# Commands
+# 명령어
 
-## Categories
+## 분류
 
-Click on a Category below for a list of supported commands.
-
-| Category | Description |
+| 분류 | 설명 |
 | --- | --- |
-| [Archive](./Archive/README.md) | Commands for extracting and compressing files to and from various archive formats. |
-| [Branch](./Branch/README.md) | Branch commands such as conditional statements, comparison operators, and loops allow you to control the flow of your script and execute code located in other scripts or sections based on the result of the expression. |
-| [Control](./Control/README.md) | Commands for setting variables and macros as well as aborting a script or build process. |
-| [File](./File/README.md) | Commands for manipulating files and directories. |
-| [Hash](./Hash/README.md) | Commands for hashing and verifying files. |
-| [INI](./INI/README.md) | Commands that allow you to read and write standard _.ini_ formatted files, including PEBakery .script files. |
-| [Interface](./Interface/README.md) | Interface commands allow your scripts to interact with the user. |
-| [Math](./Math/README.md) | Commands for performing mathematical operations. |
-| [Network](./Network/README.md) | Commands that allow you to perform network related tasks such as downloading files from the Internet. |
-| [Script](./Script/README.md) | Script commands allow you to modify a .script file, including encoding and extracting attachments. |
-| [Registry](./Registry/README.md) | Commands that allow you to read and write values from the local registry. You can also load and modify off-line registry hives belonging to the project. |
-| [String](./String/README.md) | Commands that allow you to perform string manipulation. |
-| [System](./System/README.md) | Commands for controlling how PEBakery behaves, as well as for executing external processes. |
-| [Text](./Text/README.md) |  Commands that allow you to add and remove lines from standard text files. |
-| [WIM](./WIM/README.md) | Commands for working with Windows Imaging (.wim) files. |
+| [Archive](./Archive/README.md) | 파일을 압축/압축해제 전용 명령어 |
+| [Branch](./Branch/README.md) | 무조건/조건부 분기, 반복문 등 실행 흐름을 제어할 수 있는 명령어 |
+| [Control](./Control/README.md) | 변수, 매크로 그리고 빌드 과정을 관리하는 명령어.  |
+| [File](./File/README.md) | 파일 및 디렉터리를 다루는 명령어 |
+| [Hash](./Hash/README.md) | 파일의 해시를 계산하고 검증하는 명령어 |
+| [INI](./INI/README.md) | _.ini_ 파일을 읽고 쓰는 명령어 |
+| [Interface](./Interface/README.md) | 사용자와의 상호작용을 위한 명령어 |
+| [Math](./Math/README.md) | 수학적 연산 전용 명령어 |
+| [Network](./Network/README.md) | 네트워크와 연관된 명령어 |
+| [Script](./Script/README.md) | 파일 첨부 등 스크립트 연관 명령어 |
+| [Registry](./Registry/README.md) | 레지스트리를 읽고 쓰는 명령어 |
+| [String](./String/README.md) | 문자열 연산 전용 명령어 |
+| [System](./System/README.md) | PEBakery의 행동을 관리하거나 다른 프로세스를 실행하는 명령어 |
+| [Text](./Text/README.md) | 텍스트 파일을 읽고 쓰는 명령어 |
+| [WIM](./WIM/README.md) | Windows Imaging (.wim) 파일을 위한 명령어 |
 
-[Deprecated Commands](./Deprecated.md)
+[제거된 명령어들](./Deprecated.md)
